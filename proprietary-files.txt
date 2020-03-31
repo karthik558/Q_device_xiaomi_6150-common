@@ -560,6 +560,14 @@ vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
 vendor/lib/libqmiservices.so
 
+# QCOM-Soundfx
+vendor/lib/soundfx/libqcbassboost.so|b4d85132b8657c8df2baec4cdce856284fdfb4dc
+vendor/lib/soundfx/libqcreverb.so|40161cbfb46c28d485c9a1dffb4806834e66bb16
+vendor/lib/soundfx/libqcvirt.so|2c19f79ea730dbb6c1e5b3ad299a40fafadabd3e
+vendor/lib64/soundfx/libqcbassboost.so|6df111d89e7604127381224cd48802fa7adc4c9d
+vendor/lib64/soundfx/libqcreverb.so|13f05971cbc124fc93087b64b9c1f59798e8af4a
+vendor/lib64/soundfx/libqcvirt.so|64b8d53a43ed154a065e9ebc2299d71cede7e2a9
+
 # Radio
 -product/app/QtiTelephonyService/QtiTelephonyService.apk
 -product/app/datastatusnotification/datastatusnotification.apk
