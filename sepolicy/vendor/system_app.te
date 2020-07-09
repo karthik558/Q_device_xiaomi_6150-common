@@ -13,3 +13,4 @@ set_prop(system_app, system_prop);
 allow system_app sysfs_battery_supply:file { read };
 allow system_app sysfs_battery_supply:file { open };
 allow system_app sysfs_battery_supply:file { getattr };
+allow system_app sysfs_battery_supply:dir { search };
