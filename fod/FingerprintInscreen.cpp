@@ -19,11 +19,13 @@
 #include "FingerprintInscreen.h"
 
 #include <android-base/logging.h>
+#include <android-base/properties.h>
 #include <fcntl.h>
 #include <fstream>
 #include <hardware_legacy/power.h>
 #include <poll.h>
 #include <sys/stat.h>
+#include <string.h>
 #include <thread>
 
 #define FINGERPRINT_ACQUIRED_VENDOR 6
@@ -36,7 +38,6 @@
 #define Touch_Aod_Enable 11
 
 #define FOD_SENSOR_X 445
-#define FOD_SENSOR_Y 1931
 #define FOD_SENSOR_SIZE 190
 
 #define FOD_UI_PATH "/sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui"
@@ -68,6 +69,10 @@ namespace fingerprint {
 namespace inscreen {
 namespace V1_0 {
 namespace implementation {
+
+using ::android::base::GetProperty;
+
+constexpr char kXyProp[] = "persist.vendor.sys.fp.fod.location.X_Y";
 
 FingerprintInscreen::FingerprintInscreen() {
     TouchFeatureService = ITouchFeature::getService();
@@ -103,7 +108,13 @@ Return<int32_t> FingerprintInscreen::getPositionX() {
 }
 
 Return<int32_t> FingerprintInscreen::getPositionY() {
-    return FOD_SENSOR_Y;
+    std::string xy = GetProperty(kXyProp, "");
+    if (xy == "445,1715") {
+      return 1715;
+    } else if (xy == "445,1931") {
+      return 1931;
+    }
+    return 0;
 }
 
 Return<int32_t> FingerprintInscreen::getSize() {
