@@ -153,6 +153,9 @@ audio.offload.video=true
 debug.stagefright.omx_default_rank.sw-audio=1
 vendor.media.target.version=2
 
+# Hack for Youtube
+sys.display-size=3840x2160
+
 # Netflix
 ro.netflix.bsp_rev=Q6150-17263-1
 
