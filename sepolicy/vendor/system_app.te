@@ -1,16 +1,14 @@
 # VioletParts
 allow system_app sysfs_fcharge:file { open read getattr write };
 allow system_app sysfs_fastcharge:file { open read getattr write };
-
 allow system_app vendor_default_prop:file { getattr open read };
 allow system_app wificond:binder call;
 allow system_app hal_mlipay_default:binder call;
 allow system_app sysfs_vibrator:file rw_file_perms;
 allow system_app sysfs_vibrator:dir search;
-
 set_prop(system_app, system_prop);
-
+allow system_app sysfs_battery_supply:dir { search };
 allow system_app sysfs_battery_supply:file { read };
 allow system_app sysfs_battery_supply:file { open };
 allow system_app sysfs_battery_supply:file { getattr };
-allow system_app sysfs_battery_supply:dir { search };
+
