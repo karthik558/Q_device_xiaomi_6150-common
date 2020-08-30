@@ -70,3 +70,6 @@ persist.sys.wfd.virtual=0
 
 # Zygote
 persist.device_config.runtime_native.usap_pool_enabled=true
+
+#Build Fingerprint
+ro.build.fingerprint=google/flame/flame:10/QQ3A.200805.001/6578210:user/release-keys
