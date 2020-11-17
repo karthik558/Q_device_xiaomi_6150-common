@@ -78,4 +78,4 @@ persist.sys.wfd.virtual=0
 persist.device_config.runtime_native.usap_pool_enabled=true
 
 #Build Fingerprint
-ro.build.fingerprint=google/coral/coral:11/RP1A.200720.009/6720564:user/release-keys
+ro.build.fingerprint=google/redfin/redfin:11/RD1A.201105.003.C1/6886399:user/release-keys
